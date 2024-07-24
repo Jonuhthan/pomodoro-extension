@@ -1,0 +1,10 @@
+{
+    "name" : "Random Word Generator",
+    "version" : "1.0.0",
+    "description" : "Testing manifest file",
+    "manifest_version" : 3,
+    "action" : {
+        "default_popup" : "index.html",
+        "default_title" : "Random Word"
+    }
+} 
