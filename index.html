@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="word">Loading...</h1>
+    <div class="bodyContainer">
+        <div class="headerContainer">
+            <h1 id="title">⏲️ Pomodoro Timer</h1>
+            <img id="settingsButton" src="..">
+            <img id="moreButton" src="..">
+        </div>
+        <div class="contentContainer">
+            <h2 id="timer">00:25:00</h2>
+            <p class="timerLabel">Deep Work!</p>
+            <div class="timerButtonsContainer">
+                <button>Start</button>
+                <button>Reset</button>
+            </div>
+            <div class="focusModeContainer">
+                <p class="focusModeLabel">Focus Mode</p>
+                <!-- Label will be box around the slider -->
+                <label class="focusModeSwitch"> 
+                    <input type="checkbox">
+                    <span class="focusModeSlider"></span>
+                </label>
+                <img class="focusModeToolTip" src="..">
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

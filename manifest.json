@@ -1,10 +1,10 @@
 {
-    "name" : "Random Word Generator",
+    "name" : "Pomodoro Timer",
     "version" : "1.0.0",
-    "description" : "Testing manifest file",
+    "description" : "Manage your productivity and build good study habits using the Pomodoro Technique, which emphasizes 25-minute periods of deep work followed by 5-minute brain breaks.",
     "manifest_version" : 3,
     "action" : {
         "default_popup" : "index.html",
-        "default_title" : "Random Word"
+        "default_title" : "Pomodoro Timer"
     }
 } 
