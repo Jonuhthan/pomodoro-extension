@@ -17,8 +17,9 @@
             <h2 id="timer">00:25:00</h2>
             <p class="timerLabel">Deep Work!</p>
             <div class="timerButtonsContainer">
-                <button>Start</button>
-                <button>Reset</button>
+                <button id="startButton" onclick=startTimer()>Start</button>
+                <button id="stopButton" onclick=stopTimer()>Stop</button>
+                <button id="resetButton" onclick=resetTimer()>Reset</button>
             </div>
             <div class="focusModeContainer">
                 <p class="focusModeLabel">Focus Mode</p>

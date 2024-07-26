@@ -25,3 +25,7 @@ body {
     flex-direction: row;
     align-items: center;
 }
+
+#stopButton {
+    display: none;
+}
