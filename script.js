@@ -1,3 +1,4 @@
+let updatedTimer = null;
 let stopped = true;
 const originalTime = document.getElementById("timer").innerText;
 
@@ -22,6 +23,7 @@ function startTimer() {
 
 // stop timer, swap buttons, pause timer
 function stopTimer() {
+    clearInterval(updatedTimer);
     stopped = true;
     swapButtons();
 }
