@@ -4,26 +4,32 @@ const originalTime = document.getElementById("timer").innerText;
 
 // start timer, swap buttons, and begin countdown
 function startTimer() {
+    if (!stopped) return;   // prevents a new setInterval call if a current timer is running
+
     stopped = false;
     swapButtons();
-    let updatedTimer = setInterval(() => {  // calls anon function each second
+
+    updatedTimer = setInterval(() => {  // calls anon function each second
         const timerContent = document.getElementById("timer").innerText;
         const hours = Number(timerContent.slice(0,2));
         const minutes = Number(timerContent.slice(3, 5));
         const seconds = Number(timerContent.slice(6, 8));
         let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;   // calculate total amount of seconds
+
         if (stopped || totalSeconds <= 0) {
             clearInterval(updatedTimer);
         } else {
             totalSeconds--;     // decrement total then reformat back into string
+            document.getElementById("timer").innerText = formatTimer(totalSeconds);
+
         }
-        document.getElementById("timer").innerText = formatTimer(totalSeconds);
     }, 1000);
 } 
 
 // stop timer, swap buttons, pause timer
 function stopTimer() {
     clearInterval(updatedTimer);
+    updatedTimer = null;
     stopped = true;
     swapButtons();
 }
