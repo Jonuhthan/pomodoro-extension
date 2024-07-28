@@ -1,4 +1,4 @@
-let stopped = false;
+let stopped = true;
 const originalTime = document.getElementById("timer").innerText;
 
 // start timer, swap buttons, and begin countdown
@@ -45,7 +45,10 @@ function swapButtons() {
 function resetTimer() {
     // set timer back to what it was before it started
     document.getElementById("timer").innerText = originalTime;
-    stopTimer();    // allows user to start the reset timer themselves
+
+    if (!stopped) {
+        stopTimer();    // allows user to start the reset timer themselves
+    }
 }
 
 function formatTimer(totalSeconds) {
