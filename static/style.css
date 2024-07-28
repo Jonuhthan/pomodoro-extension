@@ -1,3 +1,7 @@
+div {
+    outline: 1px black;
+}
+
 body {
     width: max-content;
 }
@@ -5,7 +9,8 @@ body {
 .headerContainer {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contentContainer {
@@ -28,4 +33,11 @@ body {
 
 #stopButton {
     display: none;
+}
+
+.imageButton {
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    object-fit: contain;
 }

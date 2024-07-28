@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <div class="bodyContainer">
         <div class="headerContainer">
-            <h1 id="title">⏲️ Pomodoro Timer</h1>
-            <img id="settingsButton" src="..">
-            <img id="moreButton" src="..">
+            <div class="headerItem">
+                <h1 id="title">⏲️ Pomodoro Timer</h1>
+            </div>
+            <div class="headerItem">
+                <a href="templates/settings.html"><img id="settingsButton" class="imageButton" src="static/images/settings.png" alt="Settings"></a>
+                <a href="templates/more.html"><img id="moreButton" class="imageButton" src="static/images/more.png" alt="More"></a>
+            </div>
         </div>
         <div class="contentContainer">
             <h2 id="timer">00:25:00</h2>
@@ -28,10 +32,10 @@
                     <input type="checkbox">
                     <span class="focusModeSlider"></span>
                 </label>
-                <img class="focusModeToolTip" src="..">
+                <img id="focusModeToolTip" class="imageButton" src="static/images/information-button.png" alt="Tooltip">
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="static/script.js"></script>
 </body>
 </html>
