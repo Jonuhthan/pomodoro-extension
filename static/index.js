@@ -10,11 +10,10 @@ function startTimer() {
     swapButtons();
 
     updatedTimer = setInterval(() => {  // calls anon function each second
-        const timerContent = document.getElementById("timer").innerText;
-        const hours = Number(timerContent.slice(0,2));
-        const minutes = Number(timerContent.slice(3, 5));
-        const seconds = Number(timerContent.slice(6, 8));
-        let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;   // calculate total amount of seconds
+        const timerTokens = document.getElementById("timer").innerText.split(":");
+        const minutes = Number(timerTokens[0]);
+        const seconds = Number(timerTokens[1]);
+        let totalSeconds = minutes * 60 + seconds;   // calculate total amount of seconds
 
         if (stopped) {
             clearInterval(updatedTimer);
@@ -63,14 +62,13 @@ function resetTimer() {
 }
 
 function timesUp() {
+    document.getElementById("alarm").play();
     alert("Time's up! Enjoy your break :)");
 }
 
 function formatTimer(totalSeconds) {
-    const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-    return ((hours < 10) ? `0${hours}` : `${hours}`) + ":" +        // format single-digit values accordingly
-           ((minutes < 10) ? `0${minutes}` : `${minutes}`) + ":" +
+    return ((minutes < 10) ? `0${minutes}` : `${minutes}`) + ":" +  // format single-digit values accordingly
            ((seconds < 10) ? `0${seconds}` : `${seconds}`);
 }

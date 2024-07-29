@@ -10,15 +10,16 @@
     <div class="bodyContainer">
         <div class="headerContainer">
             <div class="headerItem">
-                <h1 id="title">⏲️ Pomodoro Timer</h1>
+                <h2 id="title">⏲️ Pomodoro Timer</h2>
             </div>
             <div class="headerItem">
                 <a href="templates/settings.html"><img id="settingsButton" class="imageButton" src="static/images/settings.png" alt="Settings"></a>
                 <a href="templates/more.html"><img id="moreButton" class="imageButton" src="static/images/more.png" alt="More"></a>
+                <audio id="alarm" src="static/audio/beep-beep-6151.mp3" preload="auto"></audio>
             </div>
         </div>
         <div class="contentContainer">
-            <h2 id="timer">00:25:00</h2>
+            <h1 id="timer">00:05</h1>
             <p class="timerLabel">Deep Work!</p>
             <div class="timerButtonsContainer">
                 <button id="startButton" onclick=startTimer()>Start</button>
@@ -36,6 +37,6 @@
             </div>
         </div>
     </div>
-    <script src="static/script.js"></script>
+    <script src="static/index.js"></script>
 </body>
 </html>
