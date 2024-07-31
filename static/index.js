@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {       // when loaded, initialize buttons and listen for them to be clicked
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    const resetButton = document.getElementById('resetButton');
+
+    startButton.addEventListener('click', startTimer);
+    stopButton.addEventListener('click', stopTimer);
+    resetButton.addEventListener('click', resetTimer);
+});
+
 let updatedTimer = null;    // global variable to reference in startTimer() and stopTimer()
 let stopped = true;
 const originalTime = document.getElementById("timer").innerText;
@@ -27,6 +37,8 @@ function startTimer() {
         }
     }, 1000);
 } 
+
+// startTimer();
 
 // stop timer, swap buttons, pause timer
 function stopTimer() {
