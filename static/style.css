@@ -11,7 +11,7 @@ body {
 
 .headerItem img, .headerItem h2 {
     display: inline-block;
-    vertical-align: middle; /* Aligns items vertically in the middle */
+    vertical-align: middle;
 }
 
 #title {
