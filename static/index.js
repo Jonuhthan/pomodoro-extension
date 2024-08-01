@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {       // when loaded, init
     startButton.addEventListener('click', startTimer);
     stopButton.addEventListener('click', stopTimer);
     resetButton.addEventListener('click', resetTimer);
+    
 });
 
 let updatedTimer = null;    // global variable to reference in startTimer() and stopTimer()

@@ -19,7 +19,7 @@ body {
     margin: 8px;
 }
 
-.contentContainer {
+.homeContentContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,4 +40,28 @@ body {
     width: 25px;
     padding: 5px;
     object-fit: contain;
+}
+
+.settingsContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.inputItem {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+
+.timeInput {
+    width: 30%;
 }
