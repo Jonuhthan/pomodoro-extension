@@ -1,6 +1,7 @@
 let updatedTimer;    // global variable to reference in startTimer() and stopTimer()
 let stopped = true;
 let defaultTime;
+let breakTime = false;  // indicates what timer we are using (work or break)
 
 // if on home page, initialize buttons and listen for actions
 if (document.getElementById("homeIdentifier")) {
@@ -8,7 +9,7 @@ if (document.getElementById("homeIdentifier")) {
 
     // gets duration from local storage and updates the timer if one exists
     // savedDuration is string in the format "HH:MM"
-    const savedDuration = localStorage.getItem('timerDuration');
+    const savedDuration = localStorage.getItem('pomodoroDuration');
     if (savedDuration) {
         document.getElementById("timer").innerText = savedDuration;
     }
@@ -25,7 +26,7 @@ if (document.getElementById("homeIdentifier")) {
 // start timer, swap buttons, and begin countdown
 function startTimer() {
     if (!stopped) return;   // prevents a new setInterval call if a current timer is running
-
+    
     stopped = false;
     swapButtons();
 
@@ -37,7 +38,7 @@ function startTimer() {
             clearInterval(updatedTimer);
         } else if (totalSeconds <= 0) {
             clearInterval(updatedTimer);
-            timesUp();
+            timesUp((!breakTime) ? "pomodoro" : "break");
         } else {
             totalSeconds--;     // decrement total then reformat back into string
             document.getElementById("timer").innerText = formatTimer(totalSeconds);
@@ -59,7 +60,7 @@ function swapButtons() {
     let startButtonStyle = window.getComputedStyle(startButton);
     let stopButton = document.getElementById("stopButton");
 
-    if (startButtonStyle.display !== "none") {  // swaps
+    if (startButtonStyle.display !== "none") {  // swaps dispaly of buttons
         startButton.style.display = "none";
         stopButton.style.display = "inline-block";
     } else {
@@ -70,9 +71,12 @@ function swapButtons() {
 
 // reset timer
 function resetTimer() {
-    // set timer back to what it was before it started
-    const savedDuration = localStorage.getItem('timerDuration');
-    if (savedDuration) {
+    const savedDuration = localStorage.getItem('pomodoroDuration');
+
+    // set timer back to what it was before it started, during work or break time
+    if (breakTime) {
+        document.getElementById("timer").innerText = localStorage.getItem("breakDuration");
+    } else if (savedDuration) {
         document.getElementById("timer").innerText = savedDuration;
     } else {
         document.getElementById("timer").innerText = defaultTime;
@@ -83,9 +87,37 @@ function resetTimer() {
     }
 }
 
-function timesUp() {
+function timesUp(timerType) {
+    timer = document.getElementById("timer");
+    timerLabel = document.getElementById("timerLabel");
+
     document.getElementById("alarm").play();
-    alert("Time's up! Enjoy your break :)");
+    if (timerType === "pomodoro") {
+        alert("Time's up! Enjoy your break :)");
+        breakTime = true;
+    } else {
+        alert("Time's up! Back to work!");
+        breakTime = false;
+    }
+
+    // updates timer and timerLabel for the respective timer (work or break)
+    if (breakTime) {
+        const breakDuration = localStorage.getItem("breakDuration");
+        if (breakDuration) {
+            timer.innerText = breakDuration;
+        }
+        timerLabel.innerText = "Break Time!";
+    } else {
+        const savedDuration = localStorage.getItem("pomodoroDuration");
+        if (savedDuration) {
+            timer.innerText = savedDuration;
+        }
+        timerLabel.innerText = "Deep Work!";
+    }
+    
+    // makes start button appear after alert message is closed
+    stopped = true;
+    swapButtons();
 }
 
 // convert string HH:MM to seconds

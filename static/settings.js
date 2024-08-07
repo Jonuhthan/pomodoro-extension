@@ -3,7 +3,7 @@ if (document.getElementById("settingsIdentifier")) {
 
     submitButton.addEventListener("click", () => {
         let pomodoroTime = document.getElementById("pomodoroTime");
-        // update to include breakTime
+        let breakTime = document.getElementById("breakTime");
 
         // verify something was entered for pomodoroTime
         if (pomodoroTime && pomodoroTime.value) {
@@ -15,7 +15,7 @@ if (document.getElementById("settingsIdentifier")) {
             }
         } else {
             // replace pomodoroTime with the value from the home page or 25 as default
-            const savedDuration = localStorage.getItem('timerDuration');
+            const savedDuration = localStorage.getItem('pomodoroDuration');
             if (savedDuration) {
                 pomodoroTime.value = Number(savedDuration.split(":")[0]);
             } else {
@@ -23,8 +23,27 @@ if (document.getElementById("settingsIdentifier")) {
             }
         }
 
+        // same edge case handling for break time
+        if (breakTime && breakTime.value) {
+            // handle value edge cases
+            if (breakTime.value <= 0) {
+                breakTime.value = 1;
+            } else if (breakTime.value > 999) {
+                breakTime.value = 999;
+            }
+        } else {
+            const breakDuration = localStorage.getItem('breakDuration');
+            if (breakDuration) {
+                breakTime.value = Number(breakDuration.split(":")[0]);
+            } else {
+                breakTime.value = 5;    
+            }
+        }
+
         // update timer duration and redirect user back to home page
-        localStorage.setItem("timerDuration", formatTimer(getSeconds(pomodoroTime.value + ":00")));
+        localStorage.setItem("pomodoroDuration", formatTimer(getSeconds(pomodoroTime.value + ":00")));
+        localStorage.setItem("breakDuration", formatTimer(getSeconds(breakTime.value + ":00")));
+
         window.location.href = '../index.html';
     });
 }
