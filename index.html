@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
+    <div id="homeIdentifier"></div>
     <div class="bodyContainer">
         <div class="headerContainer">
             <div class="headerItem">
@@ -15,11 +16,11 @@
             <div class="headerItem">
                 <a href="templates/settings.html"><img id="settingsButton" class="imageButton" src="static/images/settings.png" alt="Settings"></a>
                 <a href="templates/more.html"><img id="moreButton" class="imageButton" src="static/images/more.png" alt="More"></a>
-                <audio id="alarm" src="static/audio/beep-beep-6151.mp3" preload="auto"></audio>
+                <audio id="alarm" src="static/audio/beep.mp3" preload="auto"></audio>
             </div>
         </div>
         <div class="homeContentContainer">
-            <h1 id="timer">00:05</h1>
+            <h1 id="timer">25:00</h1>
             <p class="timerLabel">Deep Work!</p>
             <div class="timerButtonsContainer">
                 <button id="startButton">Start</button>
@@ -38,5 +39,6 @@
         </div>
     </div>
     <script src="static/index.js"></script>
+    <!-- <script src="static/settings.js"></script> -->
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    <div id="settingsIdentifier"></div>
     <div class="headerContainer">
         <div class="headerItem">
             <a href="../index.html"><img id="backButton" class="imageButton" src="../static/images/arrow.png" alt="Settings"></a>
@@ -19,7 +20,6 @@
     </div>
     <div class="settingsContentContainer">
         <h2 class="settingsHeader">Time (minutes)</h2>
-        <form class="settingsForm">
             <div class="inputContainer">
                 <div class="inputItem">
                     <label for="pomodoroTime">Pomodoro</label>
@@ -29,10 +29,11 @@
                     <label for="breakTime">Break</label>
                     <input id="breakTime" class="timeInput" type="number">
                 </div>
-                <input type="submit" value="OK"></input>
+                <button id="submitButton">OK</button>
             </div>
         </form>
     </div>
+    <script src="../static/index.js"></script>
     <script src="../static/settings.js"></script>
 </body>
 </html>
