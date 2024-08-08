@@ -65,6 +65,11 @@ body {
     width: 20px;
     padding: 5px;
     object-fit: contain;
+    transition: 500ms;
+}
+
+.imageButton:hover {
+    transform: scale(1.2);
 }
 
 .settingsContentContainer {
