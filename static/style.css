@@ -1,5 +1,22 @@
 body {
-    width: 400px;
+    width: 350px;
+}
+
+#bodyContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #50B9F1;
+    box-shadow: 0 0 5px 5px #50B9F1;
+}
+
+#timer {
+    font-size: 30px;
+    margin: 5px;
+}
+
+#timerLabel {
+    font-size: 25px;
+    margin: 5px;
+    padding: 5px;
 }
 
 .headerContainer {
@@ -116,11 +133,11 @@ body {
 }
 
 input:checked + .focusModeSlider {
-    background-color: #2196F3;
+    background-color: #45DA0A;
 }
 
 input:focus + .focusModeSlider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #45DA0A;
 }
 
 input:checked + .focusModeSlider:before {

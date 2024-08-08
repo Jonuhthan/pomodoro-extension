@@ -8,29 +8,31 @@
 </head>
 <body>
     <div id="settingsIdentifier"></div>
-    <div class="headerContainer">
-        <div class="headerItem">
-            <a href="../index.html"><img id="backButton" class="imageButton" src="../static/images/arrow.png" alt="Settings"></a>
-            <h2 id="title">Settings</h2>
-        </div>
-        <div class="headerItem">
-            <a href="settings.html"><img id="settingsButton" class="imageButton" src="../static/images/settings.png" alt="Settings"></a>
-            <a href="more.html"><img id="moreButton" class="imageButton" src="../static/images/more.png" alt="More"></a>
-        </div>
-    </div>
-    <div class="settingsContentContainer">
-        <h2 class="settingsHeader">Time (minutes)</h2>
-            <div class="inputContainer">
-                <div class="inputItem">
-                    <label for="pomodoroTime">Pomodoro</label>
-                    <input id="pomodoroTime" class="timeInput" type="number">
-                </div>
-                <div class="inputItem">
-                    <label for="breakTime">Break</label>
-                    <input id="breakTime" class="timeInput" type="number">
-                </div>
-                <button id="submitButton">OK</button>
+    <div id="bodyContainer">
+        <div class="headerContainer">
+            <div class="headerItem">
+                <a href="../index.html"><img id="backButton" class="imageButton" src="../static/images/arrow.png" alt="Settings"></a>
+                <h2 id="title">Settings</h2>
             </div>
+            <div class="headerItem">
+                <a href="settings.html"><img id="settingsButton" class="imageButton" src="../static/images/settings.png" alt="Settings"></a>
+                <a href="more.html"><img id="moreButton" class="imageButton" src="../static/images/more.png" alt="More"></a>
+            </div>
+        </div>
+        <div class="settingsContentContainer">
+            <h2 class="settingsHeader">Time (minutes)</h2>
+                <div class="inputContainer">
+                    <div class="inputItem">
+                        <label for="pomodoroTime">Pomodoro</label>
+                        <input id="pomodoroTime" class="timeInput" type="number">
+                    </div>
+                    <div class="inputItem">
+                        <label for="breakTime">Break</label>
+                        <input id="breakTime" class="timeInput" type="number">
+                    </div>
+                    <button id="submitButton">OK</button>
+                </div>
+        </div>
     </div>
     <script src="../static/index.js"></script>
     <script src="../static/settings.js"></script>
